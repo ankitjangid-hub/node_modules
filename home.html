@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WoodCraft Furniture Workshop — Handcrafted custom furniture designed and built to last. Explore our collections of solid wood tables, chairs, cabinets and bespoke home furnishings.">
+    <title>WoodCraft Furniture Workshop | Handcrafted Custom Furniture</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Notice / Announcement Strip -->
+    <div class="top-notice">
+        <div class="container top-notice-content">
+            <div class="top-notice-left">
+                <span><i class="fa-solid fa-tag"></i> <strong>Direct Factory Prices</strong> • Save 35% on Retail</span>
+                <span><i class="fa-solid fa-shield-halved"></i> 10-Year Wood Warranty</span>
+            </div>
+            <div class="top-notice-right">
+                <button type="button" onclick="openPriceEditorModal()" class="admin-only" style="background: none; border: none; cursor: pointer; color: var(--wood-light-amber); font-weight: 700;">
+                    <i class="fa-solid fa-pen-to-square"></i> Edit Workshop Prices
+                </button>
+                <a href="tel:+919001116775"><i class="fa-solid fa-phone"></i> +91 90011 16775</a>
+                <a href="https://wa.me/919001116775" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Artisan</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-hammer"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">WoodCraft</span>
+                    <span class="brand-sub">Furniture Workshop</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="product.html">Collections</a>
+                <a href="#estimator">Cost Calculator</a>
+                <a href="#budgetMatcher">Budget Matcher</a>
+                <a href="#materials">Wood Types</a>
+                <a href="about.html">Our Workshop</a>
+                <a href="contact.html">Contact &amp; Custom</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="btn btn-edit-header btn-sm admin-only" onclick="openPriceEditorModal()" title="Edit Live Prices for this Website">
+                    <i class="fa-solid fa-pen-to-square"></i> Edit Prices
+                </button>
+                <a href="https://wa.me/919001116775" target="_blank" class="btn btn-whatsapp btn-sm">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+                </a>
+                <a href="#estimator" class="btn btn-primary btn-sm btn-quote-nav">
+                    <i class="fa-solid fa-calculator"></i> Price Estimator
+                </a>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-hammer"></i>
+            </div>
+            <div class="logo-text">
+                <span class="brand-name">WoodCraft</span>
+                <span class="brand-sub">Furniture Workshop</span>
+            </div>
+        </div>
+        <div class="drawer-links">
+            <a href="index.html">Home</a>
+            <a href="product.html">Furniture Collections</a>
+            <a href="#estimator">Price &amp; Cost Estimator</a>
+            <a href="#budgetMatcher">Custom Budget Matcher</a>
+            <a href="#materials">Wood &amp; Materials Guide</a>
+            <a href="about.html">About Workshop</a>
+            <a href="contact.html">Contact &amp; Commission</a>
+        </div>
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+            <button type="button" class="btn btn-edit-header admin-only" onclick="openPriceEditorModal()" style="width: 100%;">
+                <i class="fa-solid fa-pen-to-square"></i> Edit Workshop Prices
+            </button>
+            <a href="https://wa.me/919001116775" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Quote
+            </a>
+            <a href="tel:+919001116775" class="btn btn-secondary" style="width: 100%;">
+                <i class="fa-solid fa-phone"></i> Call Workshop
+            </a>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="section-tag">
+                    <i class="fa-solid fa-coins"></i> Direct Factory Rates • Built To Your Budget
+                </div>
+                <h1>Custom Furniture <span>Built To Your Exact Price.</span></h1>
+                <p class="lead">
+                    No showroom markups. Direct from our woodworking factory to your home. Tell us your room sizes and budget — our master carpenters will craft high-durability furniture tailored to your price.
+                </p>
+
+                <div class="hero-features-badge">
+                    <div class="badge-item"><i class="fa-solid fa-tag"></i> Beds starting @ ₹12,999</div>
+                    <div class="badge-item"><i class="fa-solid fa-tag"></i> Dining Sets starting @ ₹14,500</div>
+                    <div class="badge-item"><i class="fa-solid fa-tag"></i> Desks &amp; Tables @ ₹2,999+</div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="product.html" class="btn btn-primary btn-lg">
+                        <i class="fa-solid fa-couch"></i> Explore Budget Collections
+                    </a>
+                    <button type="button" onclick="openPriceEditorModal()" class="btn btn-secondary btn-lg admin-only">
+                        <i class="fa-solid fa-pen-to-square"></i> Customize Prices Live
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <h3>18+</h3>
+                        <p>Years Heritage</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>3,400+</h3>
+                        <p>Homes Furnished</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>35%</h3>
+                        <p>Direct Savings</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-main-card">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80" alt="Mastercrafted wooden living room furniture">
+                    <div class="hero-top-pill">
+                        <i class="fa-solid fa-star"></i> 4.9/5 Master Workshop Rating
+                    </div>
+                </div>
+                <div class="hero-floating-badge">
+                    <div class="floating-icon">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <div class="floating-text">
+                        <strong>You Set The Budget</strong>
+                        <span>We engineer materials to match your price</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Quality Strip -->
+    <div class="trust-strip">
+        <div class="container trust-grid">
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <div class="trust-info">
+                    <h4>Direct Workshop Rates</h4>
+                    <p>Zero middleman markups. Direct factory pricing on all custom pieces.</p>
+                </div>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <i class="fa-solid fa-tree"></i>
+                </div>
+                <div class="trust-info">
+                    <h4>Seasoned Hardwood</h4>
+                    <p>Moisture-controlled timber to prevent bending, cracking, or termite decay.</p>
+                </div>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                </div>
+                <div class="trust-info">
+                    <h4>100% Custom Dimensions</h4>
+                    <p>Bespoke measurements crafted to fit any room corner perfectly.</p>
+                </div>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div class="trust-info">
+                    <h4>White Glove Setup</h4>
+                    <p>Safe padded delivery and professional on-site in-home assembly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Target Budget Matcher Section -->
+    <section id="budgetMatcher" style="padding: 60px 0 20px 0;">
+        <div class="container">
+            <div class="budget-matcher-box">
+                <div class="budget-matcher-header">
+                    <div>
+                        <div class="section-tag" style="margin-bottom: 8px;">
+                            <i class="fa-solid fa-wallet"></i> Customer Budget Customizer
+                        </div>
+                        <h3 style="font-size: 1.6rem; color: var(--wood-darkest); margin-bottom: 4px;">Have a Target Budget in Mind?</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Enter your budget amount and see what custom furniture options our workshop can build for you!</p>
+                    </div>
+                    <div>
+                        <a href="https://wa.me/919001116775" id="budgetWhatsAppBtn" target="_blank" class="btn btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> Chat My Budget on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="budget-slider-wrapper">
+                    <label style="font-weight: 700; color: var(--wood-dark); font-size: 1rem;">Enter Your Target Budget:</label>
+                    <div style="position: relative;">
+                        <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-weight: 800; color: var(--wood-primary); font-size: 1.1rem;">₹</span>
+                        <input type="number" id="customBudgetInput" class="budget-input-field" value="15000" step="1000" min="2500" max="200000" style="padding-left: 28px;">
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.85rem;">(Type any amount: e.g. 5000, 15000, 35000, 75000)</span>
+                </div>
+
+                <div id="customBudgetAdvice" class="budget-advice-pill">
+                    <!-- Evaluated dynamically by script.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Custom Furniture Price & Cost Estimator -->
+    <section class="calculator-section" id="estimator">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fa-solid fa-sliders"></i> Live Interactive Estimator
+                </div>
+                <h2>Custom Furniture Price Calculator</h2>
+                <p>Select your furniture category, solid wood preference, size, and finish to get an instant workshop cost estimate.</p>
+            </div>
+
+            <div class="calculator-wrapper">
+                <!-- Inputs Side -->
+                <div class="calc-form-side">
+                    <h3>1. Configure Your Piece &amp; Budget</h3>
+                    <p class="subtitle">Real-time direct factory price calculation with low starting rates</p>
+
+                    <!-- Type Selector -->
+                    <div class="calc-group">
+                        <label class="calc-label">Choose Furniture Type</label>
+                        <div class="calc-options-grid">
+                            <div class="calc-radio-btn calc-type-btn selected" data-type="bed">
+                                <span class="opt-name"><i class="fa-solid fa-bed"></i> Bed Frame</span>
+                                <span class="opt-hint">From ₹11,999</span>
+                            </div>
+                            <div class="calc-radio-btn calc-type-btn" data-type="sofa">
+                                <span class="opt-name"><i class="fa-solid fa-couch"></i> Sofa Set</span>
+                                <span class="opt-hint">From ₹12,499</span>
+                            </div>
+                            <div class="calc-radio-btn calc-type-btn" data-type="dining">
+                                <span class="opt-name"><i class="fa-solid fa-utensils"></i> Dining Table</span>
+                                <span class="opt-hint">From ₹13,500</span>
+                            </div>
+                            <div class="calc-radio-btn calc-type-btn" data-type="wardrobe">
+                                <span class="opt-name"><i class="fa-solid fa-door-closed"></i> Wardrobe</span>
+                                <span class="opt-hint">From ₹11,999</span>
+                            </div>
+                            <div class="calc-radio-btn calc-type-btn" data-type="desk">
+                                <span class="opt-name"><i class="fa-solid fa-laptop"></i> Study Desk</span>
+                                <span class="opt-hint">From ₹4,999</span>
+                            </div>
+                            <div class="calc-radio-btn calc-type-btn" data-type="cabinet">
+                                <span class="opt-name"><i class="fa-solid fa-boxes-stacked"></i> TV / Cabinet</span>
+                                <span class="opt-hint">From ₹5,499</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wood Type & Size -->
+                    <div class="calc-group calc-row-2">
+                        <div>
+                            <label class="calc-label" for="calcWood">Wood Species / Material</label>
+                            <select id="calcWood" class="custom-select">
+                                <option value="economy">Economy Seasoned Hardwood (Lowest Cost)</option>
+                                <option value="plywood" selected>Marine Ply (BWP 710) + Natural Veneer</option>
+                                <option value="sheesham">Indian Sheesham (Rosewood) - Best Value</option>
+                                <option value="teak">CP Teak Wood (Sagwan) - Premium</option>
+                                <option value="walnut">American Walnut - Luxury Grain</option>
+                                <option value="oak">White Oak - Modern Nordic</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="calc-label" for="calcSize">Dimensions / Seater</label>
+                            <select id="calcSize" class="custom-select">
+                                <option value="compact">Compact / Small Room / 4-Seater</option>
+                                <option value="standard" selected>Standard Size / 6-Seater / Queen</option>
+                                <option value="large">Grand King / 8-Seater</option>
+                                <option value="custom">Custom Room Dimensions</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Polish Finish & Storage Options -->
+                    <div class="calc-group calc-row-2">
+                        <div>
+                            <label class="calc-label" for="calcFinish">Surface Finish &amp; Polish</label>
+                            <select id="calcFinish" class="custom-select">
+                                <option value="matt" selected>Natural Satin Polish (Free Included)</option>
+                                <option value="gloss">Glossy Clear PU Polish (+₹1,200)</option>
+                                <option value="distressed">Rustic Vintage Stain (+₹1,800)</option>
+                                <option value="epoxy">Epoxy Resin River Accent (+₹3,500)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="calc-label" for="calcStorage">Storage / Mechanisms</label>
+                            <select id="calcStorage" class="custom-select">
+                                <option value="none" selected>Standard (No Internal Storage)</option>
+                                <option value="box">Manual Box / Drawers Storage (+₹1,800)</option>
+                                <option value="hydraulic">German Hydraulic Lift Mechanism (+₹3,800)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Custom Budget Optional Field -->
+                    <div class="calc-group">
+                        <label class="calc-label" for="calcCustomerBudget">Your Desired Target Budget (Optional)</label>
+                        <input type="text" id="calcCustomerBudget" class="form-control" placeholder="e.g. ₹15,000 or ₹25,000 (We adjust wood to match your price)">
+                    </div>
+                </div>
+
+                <!-- Live Summary Side -->
+                <div class="calc-summary-side">
+                    <div class="summary-header">
+                        <h4>Workshop Estimate Summary</h4>
+                        <p>Direct workshop price with zero middlemen fees.</p>
+                    </div>
+
+                    <div class="summary-breakdown">
+                        <div class="summary-row">
+                            <span>Selected Item:</span>
+                            <span id="sumFurniture">Solid Bed Frame</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Timber Species:</span>
+                            <span id="sumWood">Marine Ply + Veneer</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Dimensions/Size:</span>
+                            <span id="sumSize">Standard / Queen Size</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Surface Finish:</span>
+                            <span id="sumFinish">Natural Satin Polish</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Workshop Lead Time:</span>
+                            <span id="sumDuration">7 - 10 Days</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="price-display-box">
+                            <div class="label">Estimated Workshop Cost</div>
+                            <div class="total-price" id="calcDisplayPrice">₹11,999 - ₹13,500</div>
+                            <div class="price-note">Direct factory price • 100% Customizable to your budget</div>
+                        </div>
+
+                        <a href="https://wa.me/919001116775" id="calcWhatsAppBtn" target="_blank" class="btn btn-whatsapp btn-lg calc-action-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Lock Estimate &amp; Inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Master Product Catalog Showcase -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fa-solid fa-couch"></i> Direct Workshop Catalog
+                </div>
+                <h2>Affordable Handcrafted Collections</h2>
+                <p>Browse our popular furniture designs made from seasoned timber.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs-wrapper">
+                <button class="filter-btn active" data-filter="all">All Designs</button>
+                <button class="filter-btn" data-filter="bedroom">Bedroom &amp; Beds</button>
+                <button class="filter-btn" data-filter="living">Living Room &amp; Sofas</button>
+                <button class="filter-btn" data-filter="dining">Dining &amp; Tables</button>
+                <button class="filter-btn" data-filter="office">Work &amp; Study</button>
+                <button class="filter-btn" data-filter="custom">Custom &amp; Temples</button>
+            </div>
+
+            <!-- Search & Budget Filter Bar -->
+            <div class="catalog-filter-bar">
+                <div class="search-bar-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="productSearchInput" placeholder="Search by name, wood type (e.g. Bed, Sofa, Dining, Desk)...">
+                </div>
+                <select id="productBudgetFilter" class="budget-dropdown-select">
+                    <option value="all">Filter by Price: All Budgets</option>
+                    <option value="under5k">Under ₹5,000</option>
+                    <option value="under10k">Under ₹10,000</option>
+                    <option value="under15k">Under ₹15,000</option>
+                    <option value="above15k">₹15,000 &amp; Above</option>
+                </select>
+            </div>
+
+            <!-- Dynamic Product Cards Grid -->
+            <div class="product-cards-grid" id="productCatalogGrid">
+                <!-- Rendered dynamically by script.js -->
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                <a href="product.html" class="btn btn-secondary btn-lg">
+                    <i class="fa-solid fa-layer-group"></i> View Complete Workshop Catalog
+                </a>
+                <button type="button" class="btn btn-primary btn-lg admin-only" onclick="openPriceEditorModal()">
+                    <i class="fa-solid fa-pen-to-square"></i> Edit Catalog Starting Prices
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solid Wood Species & Materials Guide -->
+    <section class="wood-types-section" id="materials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fa-solid fa-tree"></i> Timber Knowledge
+                </div>
+                <h2>Wood Species We Handcraft</h2>
+                <p>We source only high-grade, naturally aged and kiln-seasoned hardwood logs. Here is how our primary timbers compare.</p>
+            </div>
+
+            <div class="materials-grid">
+                <!-- Sheesham -->
+                <div class="material-card">
+                    <div class="wood-swatch swatch-sheesham"></div>
+                    <h3>Indian Sheesham (Rosewood)</h3>
+                    <span class="scientific-name">Dalbergia sissoo • Best Value Hardwood</span>
+                    <p>Deep rich grain with distinct dark and light contrast patterns. Exceptionally dense, heavy, and resistant to decay. Perfect for heirloom furniture.</p>
+                    <div class="wood-ratings">
+                        <div class="rating-row"><span>Hardness &amp; Strength</span> <span>★★★★★</span></div>
+                        <div class="rating-row"><span>Termite Resistance</span> <span>★★★★☆</span></div>
+                        <div class="rating-row"><span>Best For</span> <span>Dining Sets, Beds, Mandir</span></div>
+                    </div>
+                </div>
+
+                <!-- Teak -->
+                <div class="material-card">
+                    <div class="wood-swatch swatch-teak"></div>
+                    <h3>CP Teak Wood (Sagwan)</h3>
+                    <span class="scientific-name">Tectona grandis • Premium Hardwood</span>
+                    <p>The gold standard of furniture timber. Packed with natural oils that naturally repel termites, pests, and moisture. Beautiful golden-brown grain.</p>
+                    <div class="wood-ratings">
+                        <div class="rating-row"><span>Hardness &amp; Strength</span> <span>★★★★★</span></div>
+                        <div class="rating-row"><span>Termite Resistance</span> <span>★★★★★ (Highest)</span></div>
+                        <div class="rating-row"><span>Best For</span> <span>Beds, Sofas, Heavy Doors</span></div>
+                    </div>
+                </div>
+
+                <!-- Walnut -->
+                <div class="material-card">
+                    <div class="wood-swatch swatch-walnut"></div>
+                    <h3>American Walnut</h3>
+                    <span class="scientific-name">Juglans nigra • Luxury Dark Timber</span>
+                    <p>Luxurious dark chocolate tone with swirling live-edge grain character. Prized worldwide by architects and interior designers for modern luxury spaces.</p>
+                    <div class="wood-ratings">
+                        <div class="rating-row"><span>Hardness &amp; Strength</span> <span>★★★★☆</span></div>
+                        <div class="rating-row"><span>Termite Resistance</span> <span>★★★★☆</span></div>
+                        <div class="rating-row"><span>Best For</span> <span>Live Edge Tables, Study Desks</span></div>
+                    </div>
+                </div>
+
+                <!-- Oak -->
+                <div class="material-card">
+                    <div class="wood-swatch swatch-oak"></div>
+                    <h3>White Oak</h3>
+                    <span class="scientific-name">Quercus alba • Modern Scandinavian</span>
+                    <p>Modern light honey tones with prominent straight grain and medullary ray flecks. Extremely wear-resistant and ideal for minimalist Nordic aesthetics.</p>
+                    <div class="wood-ratings">
+                        <div class="rating-row"><span>Hardness &amp; Strength</span> <span>★★★★★</span></div>
+                        <div class="rating-row"><span>Termite Resistance</span> <span>★★★★☆</span></div>
+                        <div class="rating-row"><span>Best For</span> <span>Minimalist Chairs, Coffee Tables</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Craftsmanship Process -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fa-solid fa-gears"></i> Artisanal Journey
+                </div>
+                <h2>How We Build Your Furniture</h2>
+                <p>From a simple sketch to a museum-grade finished wooden piece in your living room.</p>
+            </div>
+
+            <div class="process-steps-grid">
+                <div class="process-card">
+                    <div class="step-num">1</div>
+                    <div class="step-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                    <h4>Design &amp; Budget Plan</h4>
+                    <p>Share room photos or sketches. We finalize custom dimensions, wood species, and ergonomic specs according to your price.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="step-num">2</div>
+                    <div class="step-icon"><i class="fa-solid fa-tree"></i></div>
+                    <h4>Timber Seasoning</h4>
+                    <p>We select dense hardwood logs and kiln-dry them to ensure zero internal moisture or warping risks.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="step-num">3</div>
+                    <div class="step-icon"><i class="fa-solid fa-hammer"></i></div>
+                    <h4>Precision Joinery</h4>
+                    <p>Artisans cut traditional mortise-and-tenon and dovetail interlocking joints for unbreakable strength.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="step-num">4</div>
+                    <div class="step-icon"><i class="fa-solid fa-brush"></i></div>
+                    <h4>Multi-Coat Finishing</h4>
+                    <p>Multi-step hand sanding, grain filling, stain application, and 3-coat Italian PU or natural wax sealant.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="step-num">5</div>
+                    <div class="step-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <h4>White Glove Setup</h4>
+                    <p>Carefully blanket-wrapped, delivered to your room, assembled, and inspected for perfection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Workshop & Interior Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fa-solid fa-camera"></i> Behind The Scenes
+                </div>
+                <h2>Workshop Moments &amp; Finished Interiors</h2>
+                <p>A peek into our workshop floor and the stunning homes transformed by our handcrafted pieces.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item col-span-8">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Completed master living room wooden setup">
+                    <div class="gallery-overlay">
+                        <h4>Contemporary Living Room Suite</h4>
+                        <p>Solid Teak sofa set, center table, and matching media console for a Jaipur villa.</p>
+                    </div>
+                </div>
+                <div class="gallery-item col-span-4">
+                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80" alt="Artisan hand carving wood in workshop">
+                    <div class="gallery-overlay">
+                        <h4>Master Hand-Carving</h4>
+                        <p>Intricate detailing on custom temple doors and headboards.</p>
+                    </div>
+                </div>
+                <div class="gallery-item col-span-4">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80" alt="Modular wooden kitchen setup">
+                    <div class="gallery-overlay">
+                        <h4>Bespoke Solid Wood Kitchen</h4>
+                        <p>Marine ply cabinets with natural teak veneer and soft-close German fittings.</p>
+                    </div>
+                </div>
+                <div class="gallery-item col-span-8">
+                    <img src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1200&q=80" alt="Live edge solid walnut dining table setup">
+                    <div class="gallery-overlay">
+                        <h4>Live-Edge Walnut Dining Suite</h4>
+                        <p>Continuous grain 8-seater table with ergonomic solid oak cushioned chairs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fa-solid fa-heart"></i> Client Feedback
+                </div>
+                <h2>Trusted by Over 3,400+ Homeowners</h2>
+                <p>Read genuine experiences from families who chose our workshop for custom furniture commissions.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-quote">
+                        “The quality and finish of our solid teak dining table and hydraulic bed exceeded all our expectations. Showrooms were charging double the price for engineered wood, while WoodCraft gave us 100% pure solid teak at lowest workshop rates!”
+                    </p>
+                    <div class="client-profile">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Ritika Sharma" class="client-avatar">
+                        <div class="client-info">
+                            <h4>Ritika Sharma</h4>
+                            <span>C-Scheme, Jaipur • Teak Dining &amp; Bed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-quote">
+                        “We gave them our exact budget of ₹28,000 for a 3-door wardrobe and coffee table. They tailored the internal ply and veneer to fit our price without compromising build quality. Truly customer friendly!”
+                    </p>
+                    <div class="client-profile">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Vikas Meena" class="client-avatar">
+                        <div class="client-info">
+                            <h4>Vikas Meena</h4>
+                            <span>Udaipur • Custom Modular Wardrobes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-quote">
+                        “Their online price calculator gave an exact estimate that matched our final quote. The team is transparent, and they even sent WhatsApp video updates of our sofa frame being built at the workshop. 10/10 recommendation!”
+                    </p>
+                    <div class="client-profile">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Anil Kulkarni" class="client-avatar">
+                        <div class="client-info">
+                            <h4>Anil Kulkarni</h4>
+                            <span>Gurgaon • 3+1+1 Sofa Suite &amp; Coffee Table</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation & Custom Order Form -->
+    <section class="consultation-section" id="consultation">
+        <div class="container consultation-grid">
+            <div class="consultation-info">
+                <div class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--wood-light-amber); border-color: rgba(255,255,255,0.2);">
+                    <i class="fa-solid fa-calendar-check"></i> Free Consultation
+                </div>
+                <h2>Let's Build Your Dream Furniture Together.</h2>
+                <p class="lead">
+                    Have a photo from Pinterest, custom architectural dimensions, or a specific budget in mind? Fill out the form or WhatsApp our master craftsmen directly.
+                </p>
+
+                <div class="contact-quick-list">
+                    <div class="contact-quick-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Workshop Floor &amp; Showroom:</strong>
+                            <p style="color: #bfaea2; margin: 0;">Plot 42, Artisan Industrial Area, Jaipur, Rajasthan</p>
+                        </div>
+                    </div>
+                    <div class="contact-quick-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Direct Hotline:</strong>
+                            <p style="color: #bfaea2; margin: 0;">+91 90011 16775</p>
+                        </div>
+                    </div>
+                    <div class="contact-quick-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <strong>Workshop Hours:</strong>
+                            <p style="color: #bfaea2; margin: 0;">Monday – Sunday: 9:00 AM – 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="consultation-form-card">
+                <h3>Request Custom Quotation</h3>
+                <p style="color: var(--text-muted);">Get exact pricing, wood options, and 3D preview assistance within 2 hours.</p>
+
+                <form id="consultationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="custName">Your Full Name *</label>
+                            <input type="text" id="custName" class="form-control" placeholder="e.g. Rahul Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="custPhone">Phone / WhatsApp Number *</label>
+                            <input type="tel" id="custPhone" class="form-control" placeholder="+91 90011 16775" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="custFurniture">Furniture Needed *</label>
+                            <select id="custFurniture" class="form-control" required>
+                                <option value="King/Queen Bed Frame">Wooden Bed Frame (From ₹12,999)</option>
+                                <option value="Sofa Set (3+1+1 / L-Shape)">Custom Sofa Set (From ₹13,499)</option>
+                                <option value="Dining Table Set (4/6 Seater)">Dining Table &amp; Chairs (From ₹14,500)</option>
+                                <option value="Modular Wardrobes">Modular Wardrobes / Closets (From ₹11,999)</option>
+                                <option value="Study Desk & Bookshelf">Office / Study Desk (From ₹4,999)</option>
+                                <option value="Home Temple / Mandir">Carved Home Temple (From ₹6,999)</option>
+                                <option value="Full House Furniture Package">Complete House Woodwork</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="custBudget">Your Target Budget</label>
+                            <input type="text" id="custBudget" class="form-control" placeholder="e.g. ₹10,000 or ₹25,000">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="custWood">Preferred Wood Species</label>
+                            <select id="custWood" class="custom-select">
+                                <option value="CP Teak Wood (Sagwan)">CP Teak Wood (Sagwan)</option>
+                                <option value="Indian Sheesham (Rosewood)">Sheesham (Rosewood)</option>
+                                <option value="American Walnut">American Walnut</option>
+                                <option value="White Oak">White Oak</option>
+                                <option value="Marine Ply + Veneer">BWP Ply + Veneer</option>
+                                <option value="Lowest Budget Wood">Recommend Lowest Price Option</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="custNotes">Project Details / Custom Sizes</label>
+                            <input type="text" id="custNotes" class="form-control" placeholder="e.g. Room size, color, design link">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                        <i class="fa-brands fa-whatsapp"></i> Send Details &amp; Connect on WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">
+                    <i class="fa-solid fa-circle-question"></i> Common Questions
+                </div>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our custom woodworking process, guarantees, and pricing.</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>Can you build furniture matching my specific budget?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! Because we are a direct factory workshop, we can alter wood thickness, internal framing materials (Solid Sheesham, Marine Ply, Teak Veneer, or Hardwood), and finishes so you get the exact design you want at your comfortable price point.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Why are your workshop prices lower than retail furniture stores?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Retail showrooms have huge real estate rents, air conditioning bills, and dealer commissions of 30% to 50%. When you buy from WoodCraft Workshop, you pay only for pure timber, craftsmanship labor, and polish.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you guarantee protection against termites and wood borer?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        All our timber logs undergo kiln seasoning (reducing moisture below 12%) followed by pressure-impregnated anti-termite and borer chemical treatment. We provide a 10-Year written structural &amp; anti-termite warranty with every piece.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I visit the workshop to see the wood and ongoing work?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, absolutely! We encourage customers to visit our Jaipur workshop to inspect raw logs, feel timber samples, and watch master carpenters carve joints. We also offer live video calls for clients across India.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Master Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="brand-name">WoodCraft</span>
+                            <span class="brand-sub" style="color: var(--wood-light-amber);">Furniture Workshop</span>
+                        </div>
+                    </div>
+                    <p>
+                        Dedicated to preserving the heritage of authentic solid wood joinery. Handcrafting bespoke furniture for homes, offices, and villas at direct factory rates since 2008.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://wa.me/919001116775" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://youtube.com" target="_blank" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Budget Collections</h4>
+                    <ul>
+                        <li><a href="product.html">Solid Beds (From ₹12,999)</a></li>
+                        <li><a href="product.html">Sofa Sets (From ₹13,499)</a></li>
+                        <li><a href="product.html">Dining Sets (From ₹14,500)</a></li>
+                        <li><a href="product.html">Wardrobes (From ₹11,999)</a></li>
+                        <li><a href="product.html">Study Desks (From ₹4,999)</a></li>
+                        <li><a href="product.html">Coffee Tables (From ₹2,999)</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#estimator">Cost Calculator</a></li>
+                        <li><a href="#budgetMatcher">Budget Matcher</a></li>
+                        <li><a href="#materials">Wood Species Guide</a></li>
+                        <li><a href="about.html">About Workshop</a></li>
+                        <li><a href="contact.html">Custom Commission</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Workshop Contact</h4>
+                    <div class="contact-info">
+                        <p><i class="fa-solid fa-location-dot"></i> Plot 42, Artisan Industrial Area, Jaipur, Rajasthan 302013</p>
+                        <p><i class="fa-solid fa-phone"></i> +91 90011 16775</p>
+                        <p><i class="fa-solid fa-envelope"></i> orders@woodcraftworkshop.com</p>
+                        <p><i class="fa-solid fa-clock"></i> 7 Days Open: 9:00 AM – 8:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 WoodCraft Furniture Workshop. All Rights Reserved. Crafted with Passion.</p>
+                <p>Lowest Workshop Rate Guarantee • Pan-India Delivery</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Quick Actions -->
+    <div class="floating-actions">
+        <a href="https://wa.me/919001116775" target="_blank" class="floating-btn float-whatsapp" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919001116775" class="floating-btn float-call" title="Call Workshop">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Quick View Product Modal -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-image-pane">
+                <img id="modalImage" src="" alt="Product view">
+            </div>
+            <div class="modal-content-pane">
+                <div>
+                    <span class="modal-tag" id="modalCategory">Category</span>
+                    <h3 class="modal-title" id="modalTitle">Furniture Title</h3>
+                    <p class="modal-desc" id="modalDesc">Detailed description here.</p>
+
+                    <table class="modal-specs-table">
+                        <tr>
+                            <td>Wood Options:</td>
+                            <td id="modalWood">Solid Teak / Sheesham / Ply</td>
+                        </tr>
+                        <tr>
+                            <td>Dimensions:</td>
+                            <td id="modalDimensions">Custom Sized</td>
+                        </tr>
+                        <tr>
+                            <td>Finish:</td>
+                            <td id="modalFinish">PU Matt / Gloss Polish</td>
+                        </tr>
+                        <tr>
+                            <td>Warranty:</td>
+                            <td id="modalWarranty">10 Years</td>
+                        </tr>
+                        <tr>
+                            <td>Direct Price:</td>
+                            <td id="modalPrice" style="font-weight: 800; color: var(--wood-primary); font-size: 1.15rem;">Starting @ ₹12,999</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary btn-lg admin-only" onclick="openPriceEditorModal()" style="flex: 1;">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit Price
+                    </button>
+                    <a href="#" id="modalWhatsAppBtn" target="_blank" class="btn btn-whatsapp btn-lg" style="flex: 1.2;">
+                        <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Script -->
+    <script src="script.js"></script>
+</body>
+</html>

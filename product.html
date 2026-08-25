@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our affordable handcrafted solid wood furniture collections. Custom built to your exact price and room measurements with direct workshop rates.">
+    <title>Furniture Collections &amp; Catalog | WoodCraft Furniture Workshop</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Notice / Announcement Strip -->
+    <div class="top-notice">
+        <div class="container top-notice-content">
+            <div class="top-notice-left">
+                <span><i class="fa-solid fa-tag"></i> <strong>Direct Factory Prices</strong> • Save 35% on Retail</span>
+                <span><i class="fa-solid fa-shield-halved"></i> 10-Year Wood Warranty</span>
+            </div>
+            <div class="top-notice-right">
+                <button type="button" onclick="openPriceEditorModal()" class="admin-only" style="background: none; border: none; cursor: pointer; color: var(--wood-light-amber); font-weight: 700;">
+                    <i class="fa-solid fa-pen-to-square"></i> Edit Workshop Prices
+                </button>
+                <a href="tel:+919001116775"><i class="fa-solid fa-phone"></i> +91 90011 16775</a>
+                <a href="https://wa.me/919001116775" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Artisan</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-hammer"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">WoodCraft</span>
+                    <span class="brand-sub">Furniture Workshop</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="product.html" class="active">Collections</a>
+                <a href="index.html#estimator">Cost Estimator</a>
+                <a href="index.html#budgetMatcher">Budget Matcher</a>
+                <a href="index.html#materials">Wood Types</a>
+                <a href="about.html">Our Workshop</a>
+                <a href="contact.html">Contact &amp; Custom</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button type="button" class="btn btn-edit-header btn-sm admin-only" onclick="openPriceEditorModal()" title="Edit Live Prices for this Website">
+                    <i class="fa-solid fa-pen-to-square"></i> Edit Prices
+                </button>
+                <a href="https://wa.me/919001116775" target="_blank" class="btn btn-whatsapp btn-sm">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+                </a>
+                <a href="index.html#estimator" class="btn btn-primary btn-sm btn-quote-nav">
+                    <i class="fa-solid fa-calculator"></i> Price Estimator
+                </a>
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer">
+        <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-hammer"></i>
+            </div>
+            <div class="logo-text">
+                <span class="brand-name">WoodCraft</span>
+                <span class="brand-sub">Furniture Workshop</span>
+            </div>
+        </div>
+        <div class="drawer-links">
+            <a href="index.html">Home</a>
+            <a href="product.html" class="active">Furniture Collections</a>
+            <a href="index.html#estimator">Price &amp; Cost Estimator</a>
+            <a href="index.html#budgetMatcher">Custom Budget Matcher</a>
+            <a href="index.html#materials">Wood &amp; Materials Guide</a>
+            <a href="about.html">About Workshop</a>
+            <a href="contact.html">Contact &amp; Commission</a>
+        </div>
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+            <button type="button" class="btn btn-edit-header admin-only" onclick="openPriceEditorModal()" style="width: 100%;">
+                <i class="fa-solid fa-pen-to-square"></i> Edit Workshop Prices
+            </button>
+            <a href="https://wa.me/919001116775" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Quote
+            </a>
+            <a href="tel:+919001116775" class="btn btn-secondary" style="width: 100%;">
+                <i class="fa-solid fa-phone"></i> Call Workshop
+            </a>
+        </div>
+    </aside>
+
+    <!-- Page Header Banner -->
+    <section style="background: linear-gradient(135deg, var(--wood-darkest) 0%, var(--wood-dark) 100%); color: #fff; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <div class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--wood-light-amber); border-color: rgba(255,255,255,0.2);">
+                <i class="fa-solid fa-tag"></i> Lowest Factory Direct Rates
+            </div>
+            <h1 style="color: #fff; font-size: 2.8rem; margin-bottom: 12px;">Furniture Collections</h1>
+            <p style="color: #cbbab0; max-width: 680px; margin: 0 auto 20px auto; font-size: 1.1rem;">
+                Browse our collection of beds, sofas, dining tables, study desks, and cabinets. Every piece is built to order and can be adjusted to match your exact budget.
+            </p>
+            <button type="button" class="btn btn-primary btn-sm admin-only" onclick="openPriceEditorModal()">
+                <i class="fa-solid fa-pen-to-square"></i> Edit These Prices Live
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Catalog Section -->
+    <section class="products-section" style="padding-top: 50px;">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="filter-tabs-wrapper">
+                <button class="filter-btn active" data-filter="all">All Furniture</button>
+                <button class="filter-btn" data-filter="bedroom">Bedroom &amp; Beds</button>
+                <button class="filter-btn" data-filter="living">Living Room &amp; Sofas</button>
+                <button class="filter-btn" data-filter="dining">Dining &amp; Tables</button>
+                <button class="filter-btn" data-filter="office">Work &amp; Study</button>
+                <button class="filter-btn" data-filter="custom">Custom &amp; Temples</button>
+            </div>
+
+            <!-- Search & Budget Filter Bar -->
+            <div class="catalog-filter-bar">
+                <div class="search-bar-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="productSearchInput" placeholder="Search catalog by name, wood species (e.g. Bed, Sofa, Teak, Desk)...">
+                </div>
+                <select id="productBudgetFilter" class="budget-dropdown-select">
+                    <option value="all">All Budget Categories</option>
+                    <option value="under5k">Under ₹5,000 (Chairs, Tables, Racks)</option>
+                    <option value="under10k">Under ₹10,000 (Desks, Mandir, TV Units)</option>
+                    <option value="under15k">Under ₹15,000 (Solid Beds, Sofas, Wardrobes)</option>
+                    <option value="above15k">₹15,000+ (Full Dining Sets, Grand Teak)</option>
+                </select>
+            </div>
+
+            <!-- Dynamic Product Cards Grid -->
+            <div class="product-cards-grid" id="productCatalogGrid">
+                <!-- Rendered dynamically by script.js -->
+            </div>
+
+            <!-- Custom Budget & Commission Callout Card -->
+            <div style="background: var(--surface-card); border-radius: var(--radius-xl); border: 2px dashed var(--wood-amber); padding: 45px 35px; margin-top: 60px; text-align: center; box-shadow: var(--shadow-sm);">
+                <i class="fa-solid fa-coins" style="font-size: 2.8rem; color: var(--wood-primary); margin-bottom: 16px;"></i>
+                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Want a Piece Built to Your Exact Price?</h3>
+                <p style="max-width: 650px; margin: 0 auto 24px auto; color: var(--text-muted); font-size: 1rem;">
+                    Tell us your desired budget (e.g. ₹8,000, ₹15,000, or ₹30,000) and room sizes. Our master woodworkers will customize the wood and design to give you maximum value without extra retail markups.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                    <button type="button" onclick="openPriceEditorModal()" class="btn btn-secondary btn-lg admin-only">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit Catalog Starting Prices
+                    </button>
+                    <a href="https://wa.me/919001116775?text=Hello%20WoodCraft,%20I%20have%20a%20specific%20furniture%20budget%20and%20want%20to%20get%20a%20custom%20factory%20quote." target="_blank" class="btn btn-whatsapp btn-lg">
+                        <i class="fa-brands fa-whatsapp"></i> Chat with Craftsman on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Master Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="brand-name">WoodCraft</span>
+                            <span class="brand-sub" style="color: var(--wood-light-amber);">Furniture Workshop</span>
+                        </div>
+                    </div>
+                    <p>
+                        Dedicated to preserving the heritage of authentic solid wood joinery. Handcrafting bespoke furniture for homes, offices, and villas at direct factory rates since 2008.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Budget Collections</h4>
+                    <ul>
+                        <li><a href="product.html">Solid Beds</a></li>
+                        <li><a href="product.html">Sofa Sets</a></li>
+                        <li><a href="product.html">Dining Sets</a></li>
+                        <li><a href="product.html">Wardrobes</a></li>
+                        <li><a href="product.html">Study Desks</a></li>
+                        <li><a href="product.html">Coffee Tables</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#estimator">Cost Calculator</a></li>
+                        <li><a href="index.html#budgetMatcher">Budget Matcher</a></li>
+                        <li><a href="index.html#materials">Wood Species Guide</a></li>
+                        <li><a href="about.html">About Workshop</a></li>
+                        <li><a href="contact.html">Custom Commission</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Workshop Contact</h4>
+                    <div class="contact-info">
+                        <p><i class="fa-solid fa-location-dot"></i> Plot 42, Artisan Industrial Area, Jaipur, Rajasthan 302013</p>
+                        <p><i class="fa-solid fa-phone"></i> +91 90011 16775</p>
+                        <p><i class="fa-solid fa-envelope"></i> orders@woodcraftworkshop.com</p>
+                        <p><i class="fa-solid fa-clock"></i> 7 Days Open: 9:00 AM – 8:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 WoodCraft Furniture Workshop. All Rights Reserved. Crafted with Passion.</p>
+                <p>Lowest Workshop Rate Guarantee • Pan-India Delivery</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Quick Actions -->
+    <div class="floating-actions">
+        <a href="https://wa.me/919001116775" target="_blank" class="floating-btn float-whatsapp" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919001116775" class="floating-btn float-call" title="Call Workshop">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Quick View Product Modal -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-image-pane">
+                <img id="modalImage" src="" alt="Product view">
+            </div>
+            <div class="modal-content-pane">
+                <div>
+                    <span class="modal-tag" id="modalCategory">Category</span>
+                    <h3 class="modal-title" id="modalTitle">Furniture Title</h3>
+                    <p class="modal-desc" id="modalDesc">Detailed description here.</p>
+
+                    <table class="modal-specs-table">
+                        <tr>
+                            <td>Wood Options:</td>
+                            <td id="modalWood">Solid Teak / Sheesham / Ply</td>
+                        </tr>
+                        <tr>
+                            <td>Dimensions:</td>
+                            <td id="modalDimensions">Custom Sized</td>
+                        </tr>
+                        <tr>
+                            <td>Finish:</td>
+                            <td id="modalFinish">PU Matt / Gloss Polish</td>
+                        </tr>
+                        <tr>
+                            <td>Warranty:</td>
+                            <td id="modalWarranty">10 Years</td>
+                        </tr>
+                        <tr>
+                            <td>Direct Price:</td>
+                            <td id="modalPrice" style="font-weight: 800; color: var(--wood-primary); font-size: 1.15rem;">Starting @ ₹12,999</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary btn-lg admin-only" onclick="openPriceEditorModal()" style="flex: 1;">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit Price
+                    </button>
+                    <a href="#" id="modalWhatsAppBtn" target="_blank" class="btn btn-whatsapp btn-lg" style="flex: 1.2;">
+                        <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Script -->
+    <script src="script.js"></script>
+</body>
+</html>

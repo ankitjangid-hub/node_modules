@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WoodCraft Furniture | Custom Furniture Workshop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <span>WoodCraft</span>
+            <small>Furniture Workshop</small>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Product</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="quote-btn">Get Quote</a>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tagline">HANDCRAFTED • CUSTOM • QUALITY</p>
+
+            <h1>
+                Furniture Made
+                <span>For Your Space.</span>
+            </h1>
+
+            <p>
+                We create premium wooden furniture with traditional
+                craftsmanship and modern designs.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="primary-btn">
+                    Explore Furniture
+                </a>
+
+                <a href="https://wa.me/919876543210"
+                   class="whatsapp-btn"
+                   target="_blank">
+                    WhatsApp Us
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="images/hero.jpg" alt="Custom wooden furniture">
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+    <section class="products" id="products">
+
+        <div class="section-heading">
+            <p>OUR COLLECTION</p>
+            <h2>Furniture We Create</h2>
+            <span>
+                Designed and crafted according to your requirements.
+            </span>
+        </div>
+
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="images/bed.jpg" alt="Wooden Bed">
+
+                <div class="product-info">
+                    <h3>Wooden Beds</h3>
+                    <p>Strong, elegant and custom-sized beds.</p>
+                    <button onclick="showEnquiry('Wooden Bed')">
+                        Enquire Now
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <img src="images/sofa.jpg" alt="Wooden Sofa">
+
+                <div class="product-info">
+                    <h3>Sofa Sets</h3>
+                    <p>Comfortable sofas designed for your home.</p>
+                    <button onclick="showEnquiry('Sofa Set')">
+                        Enquire Now
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <img src="images/table.jpg" alt="Wooden Table">
+
+                <div class="product-info">
+                    <h3>Tables</h3>
+                    <p>Dining, office and custom wooden tables.</p>
+                    <button onclick="showEnquiry('Wooden Table')">
+                        Enquire Now
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <img src="images/chair.jpg" alt="Wooden Chair">
+
+                <div class="product-info">
+                    <h3>Chairs</h3>
+                    <p>Beautiful handcrafted wooden chairs.</p>
+                    <button onclick="showEnquiry('Wooden Chair')">
+                        Enquire Now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <div class="about-image">
+            <img src="images/workshop.jpg" alt="Furniture workshop">
+        </div>
+
+        <div class="about-content">
+
+            <p class="section-label">ABOUT OUR WORKSHOP</p>
+
+            <h2>
+                From Raw Wood
+                <span>To Beautiful Furniture.</span>
+            </h2>
+
+            <p>
+                Our workshop specializes in handcrafted wooden furniture.
+                Every product is made with attention to detail, quality
+                materials and skilled craftsmanship.
+            </p>
+
+            <div class="features">
+
+                <div>
+                    <strong>10+</strong>
+                    <span>Years Experience</span>
+                </div>
+
+                <div>
+                    <strong>500+</strong>
+                    <span>Furniture Made</span>
+                </div>
+
+                <div>
+                    <strong>100%</strong>
+                    <span>Custom Work</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Custom Furniture -->
+    <section class="custom">
+
+        <div>
+
+            <p class="section-label">CUSTOM FURNITURE</p>
+
+            <h2>
+                Have Your Own
+                <span>Design?</span>
+            </h2>
+
+            <p>
+                Send us your furniture design, photo or required size.
+                We can build furniture according to your exact requirement.
+            </p>
+
+            <button onclick="openCustomForm()">
+                Start Your Custom Order
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+
+        <div class="section-heading">
+            <p>OUR WORK</p>
+            <h2>Recent Furniture Projects</h2>
+        </div>
+
+        <div class="gallery-grid">
+
+            <img src="images/bed.jpg" alt="Furniture project">
+            <img src="images/sofa.jpg" alt="Furniture project">
+            <img src="images/table.jpg" alt="Furniture project">
+            <img src="images/chair.jpg" alt="Furniture project">
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <div class="contact-info">
+
+            <p class="section-label">CONTACT US</p>
+
+            <h2>
+                Let's Build Something
+                <span>Beautiful.</span>
+            </h2>
+
+            <p>
+                Contact us for furniture prices, custom designs
+                and workshop visits.
+            </p>
+
+            <div class="contact-details">
+
+                <p>📞 <strong>+91 98765 43210</strong></p>
+
+                <p>📍 Your Workshop Address, Rajasthan</p>
+
+                <p>🕐 Mon - Sun: 9:00 AM - 7:00 PM</p>
+
+            </div>
+
+        </div>
+
+
+        <form id="contactForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Mobile Number"
+                required
+            >
+
+            <select id="furniture">
+
+                <option value="">Select Furniture</option>
+                <option>Bed</option>
+                <option>Sofa</option>
+                <option>Table</option>
+                <option>Chair</option>
+                <option>Door</option>
+                <option>Custom Furniture</option>
+
+            </select>
+
+            <textarea
+                id="message"
+                placeholder="Tell us what you need..."
+                rows="5">
+            </textarea>
+
+            <button type="submit">
+                Send Enquiry
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="logo">
+            <span>WoodCraft</span>
+            <small>Furniture Workshop</small>
+        </div>
+
+        <p>
+            © 2026 WoodCraft Furniture Workshop.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Floating WhatsApp -->
+    <a
+        href="https://wa.me/919876543210"
+        class="floating-whatsapp"
+        target="_blank">
+        💬
+    </a>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
